@@ -23,11 +23,7 @@ public class CustomDeclarationServiceImplTest {
   @Test
   public void testDeclare() throws WxPayException {
     CustomDeclarationService customDeclarationService = new CustomDeclarationServiceImpl(wxPayService);
-    String requestParamStr = "{}";
-    /*
-     * {"appid":"wxd678efh567hg6787","mchid":"1230000109","out_trade_no":"20150806125346","transaction_id":"1000320306201511078440737890","customs":"SHANGHAI_ZS","merchant_customs_no":"123456","duty":888,"sub_order_no":"20150806125346","fee_type":"CNY","order_fee":888,"transport_fee":888,"product_fee":888}
-    */
-    requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
+    String requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
     DeclarationRequest request = GSON.fromJson(requestParamStr, DeclarationRequest.class);
 
     DeclarationResult result = customDeclarationService.declare(request);
@@ -37,11 +33,7 @@ public class CustomDeclarationServiceImplTest {
   @Test
   public void testQuery() throws WxPayException {
     CustomDeclarationService customDeclarationService = new CustomDeclarationServiceImpl(wxPayService);
-    String requestParamStr = "{}";
-    /*
-     * {"appid":"wxd678efh567hg6787","mchid":"1230000109","order_type":"transaction_id","order_no":"20150806125346","customs":"SHANGHAI_ZS","offset":"0","limit":"20"}
-     */
-    requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"order_type\":\"transaction_id\",\"order_no\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"offset\":\"0\",\"limit\":\"20\"}";
+    String requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"order_type\":\"transaction_id\",\"order_no\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"offset\":\"0\",\"limit\":\"20\"}";
     DeclarationQueryRequest request = GSON.fromJson(requestParamStr, DeclarationQueryRequest.class);
 
     DeclarationQueryResult result = customDeclarationService.query(request);
@@ -51,11 +43,7 @@ public class CustomDeclarationServiceImplTest {
   @Test
   public void testVerifyCertificate() throws WxPayException {
     CustomDeclarationService customDeclarationService = new CustomDeclarationServiceImpl(wxPayService);
-    String requestParamStr = "{}";
-    /*
-     * {"appid":"wxd678efh567hg6787","mchid":"1230000109","out_trade_no":"20150806125346","transaction_id":"1000320306201511078440737890","sub_order_no":"20150806125346","customs":"SHANGHAI_ZS","merchant_customs_no":"123456","certificate_type":"IDCARD","certificate_id":"330821198809085211","certificate_name":"张三"}
-     */
-    requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\",\"certificate_type\":\"IDCARD\",\"certificate_id\":\"430223199101264838\",\"certificate_name\":\"易株强\"}";
+    String requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\",\"certificate_type\":\"IDCARD\",\"certificate_id\":\"430223199101264838\",\"certificate_name\":\"易株强\"}";
     VerifyCertificateRequest request = GSON.fromJson(requestParamStr, VerifyCertificateRequest.class);
 
     VerifyCertificateResult result = customDeclarationService.verifyCertificate(request);
@@ -65,11 +53,8 @@ public class CustomDeclarationServiceImplTest {
   @Test
   public void testModify() throws WxPayException {
     CustomDeclarationService customDeclarationService = new CustomDeclarationServiceImpl(wxPayService);
-    String requestParamStr = "{}";
-    /*
-     * {"appid":"wxd678efh567hg6787","mchid":"1230000109","out_trade_no":"20150806125346","transaction_id":"1000320306201511078440737890","customs":"SHANGHAI_ZS","merchant_customs_no":"123456","duty":888,"sub_order_no":"20150806125346","fee_type":"CNY","order_fee":888,"transport_fee":888,"product_fee":888}
-     */
-    requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
+
+    String requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
 
     DeclarationRequest request = GSON.fromJson(requestParamStr, DeclarationRequest.class);
 
@@ -80,11 +65,7 @@ public class CustomDeclarationServiceImplTest {
   @Test
   public void testRedeclare() throws WxPayException {
     CustomDeclarationService customDeclarationService = new CustomDeclarationServiceImpl(wxPayService);
-    String requestParamStr = "{}";
-    /*
-     * {"appid":"wxd678efh567hg6787","mchid":"1230000109","out_trade_no":"20150806125346","transaction_id":"1000320306201511078440737890","sub_order_no":"20150806125346","sub_order_id":"1000320306201511078440737891","customs":"SHANGHAI_ZS","merchant_customs_no":"123456"}
-     */
-    requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
+    String requestParamStr = "{\"appid\":\"wx4275b35dac8f1bde\",\"mchid\":\"1623887211\",\"out_trade_no\":\"schiff32205031811186126779176\",\"transaction_id\":\"4200001480202205035540107159\",\"customs\":\"NINGBO\",\"merchant_customs_no\":\"4401230148\"}";
     RedeclareRequest request = GSON.fromJson(requestParamStr, RedeclareRequest.class);
 
     RedeclareResult result = customDeclarationService.redeclare(request);
